@@ -1,78 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="style.css">
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bryan Choi</title>
-</head>
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 80px;
+}
 
-<body>
-	<nav>
-		<span class="logo">Bryan Choi</span>
-		<ul>
-			<li><a href="#about">ABOUT</a></li>
-			<li><a href="#projects">PROJECTS</a></li>
-			<li><a href="#contact">CONTACT</a></li>
-		</ul>
-	</nav>
+body {
+	font-family: Arial, sans-serif;
+	background: #e6e2d3;
+	color: #b9936c;
+}
 
-	<header>
-		<h1>Bryan Choi</h1>
-		<p>Student Developer</p>
-		<a href="#projects" class="btn">See my work</a>
-	</header>
+header h1 {
+	font-size: 2.5em;
+	margin-bottom: 10px;
+}
 
-	<h3>Arcade Menu</h3>
+header {
+	text-align: center;
+	padding: 120px 20px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
-	<p>A self-built web arcade hosting two original browser games (an incremental clicker and a tower defense game with 19+ towers, 11+ difficulty modes, and a full progression system) plus an AI-powered study companion tool, with account authentication and cross-device save syncing via Supabase, deployed on GitHub Pages with no build tooling.</p>
+header p {
+	font-size: 2em;
+	color: #997E45;
+}
 
-	<a href="https://bryan03512.github.io/personalWebsite/index.html">Arcade Menu Site</a>
+header a {
+	font-size: 1.5em;
+}
 
-	<iframe id="preview" src="https://bryan03512.github.io/personalWebsite/index.html" width="100%" height="800" style="border:thick; border-radius:10px;"></iframe>
+h3 {
+	margin-top: 30px;
+	font-size: 3em;
+	text-align: center;
+}
 
-	<a href="#" onclick="openProject('https://bryan03512.github.io/personalWebsite/clicker.html')">Site 1</a>
+p {
+	font-size: 1.3em;
+	color: #997E45;
+}
 
-	<a href="#" onclick="openProject('https://bryan03512.github.io/personalWebsite/towerdefense.html')">Site 2</a>
+a {
+	font-size: 1.5em;
+}
 
-	<a href="#" onclick="openProject('https://course-companion-rho.vercel.app/')">Site 3</a>
+#projects {
+	padding-bottom: 50px;
+}
 
-	<a href="#" onclick="openProject('https://bryan03512.github.io/personalWebsite/leaderboard.html')">Site 4</a>
+#contact {
+	text-align: center;
+}
 
-	<h3>Pose Trainer</h3>
+#contact p {
+	color: black;
+	text-align: center;
+	font-size: 1.1em;
+	margin-bottom: 30px;
+}
 
-	<p>Pose Trainer is a browser app that uses your webcam to learn poses you record, such as martial arts stances, yoga, dance or physical therapy moves. It then recognizes those poses live and coaches you joint by joint, and everything runs on your device without sending any video.</p>
+.contact-links {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+}
 
-	<a href="https://bryan03512.github.io/pose-trainer/">Pose Trainer Site</a>
+.btn-outline {
+	background-color: transparent;
+	border: 2px solid #5F67E3;
+	color: #EDB979;
+}
 
-	<iframe id="preview" src="https://bryan03512.github.io/pose-trainer/" width="100%" height="800" style="border:thick; border-radius:10px;"></iframe>
+.btn-outline:hover {
+	background-color: #5F67E3;
+	color: white;
+}
 
-	<h3>CheckedMath</h3>
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 40px;
+	background-color: #c1946a;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
 
-	<p>CheckedMath is a math tutoring website I built where students describe exactly what they're stuck on and get personalized, print-ready worksheets and step-by-step explanations: AI drafts each one, a second AI pass re-solves every problem to catch mistakes, and I review the results before they're emailed out. It also offers free practice problems on 17 topics that check answers instantly, a daily challenge, and printable practice sheets, built with React, TypeScript, Supabase, the Anthropic API, and Cloudflare Turnstile for spam protection.</p>
+.logo {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #3e4444;
+}
 
-	<a href="https://checkedmath.lovable.app/">CheckedMath Site</a>
+nav ul {
+	list-style: none;
+	display: flex;
+	gap: 30px;
+}
 
-	<iframe id="preview" src="https://checkedmath.lovable.app/" width="100%" height="800" style="border:thick; border-radius:10px;"></iframe>
+nav a {
+	color: #1A0000;
+	text-decoration: none;
+	font-weight: bold;
+}
 
-	<a href="#" onclick="openProject('https://checkedmath.lovable.app/order')">Site 1</a>
+nav a:hover {
+	color: #FFBE5C;
+}
 
-	<a href="#" onclick="openProject('https://checkedmath.lovable.app/explain')">Site 2</a>
-
-	<a href="#" onclick="openProject('https://checkedmath.lovable.app/practice')">Site 3</a>
-
-	<a href="#" onclick="openProject('https://checkedmath.lovable.app/daily')">Site 4</a>
-
-	<a href="#" onclick="openProject('https://checkedmath.lovable.app/teachers')">Site 5</a>
-
-	<script>
-		function openProject(url){
-			var frame=document.getElementById('preview');
-			frame.style.display='block';
-			frame.src=url;
-		}
-	</script>
-</body>
-
-</html>
+section {
+	min-height: 100vh;
+}
