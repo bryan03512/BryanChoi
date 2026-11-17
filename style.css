@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 80px;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	background: #e6e2d3;
@@ -17,7 +22,12 @@ header h1 {
 
 header {
 	text-align: center;
-	padding: 60px 20px;
+	padding: 120px 20px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 header p {
@@ -44,12 +54,47 @@ a {
 	font-size: 1.5em;
 }
 
+#projects {
+	padding-bottom: 50px;
+}
+
+#contact {
+	text-align: center;
+}
+
+#contact p {
+	color: black;
+	text-align: center;
+	font-size: 1.1em;
+	margin-bottom: 30px;
+}
+
+.contact-links {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+}
+
+.btn-outline {
+	background-color: transparent;
+	border: 2px solid #5F67E3;
+	color: #EDB979;
+}
+
+.btn-outline:hover {
+	background-color: #5F67E3;
+	color: white;
+}
+
 nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px 40px;
 	background-color: #c1946a;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 }
 
 .logo {
@@ -72,4 +117,8 @@ nav a {
 
 nav a:hover {
 	color: #FFBE5C;
+}
+
+section {
+	min-height: 100vh;
 }
